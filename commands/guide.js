@@ -5,7 +5,6 @@ module.exports = {
 	name: 'guide',
 	description: 'Among Us Guide.',
 	aliases: ['strategy'],
-	usage: '[command name]',
 	cooldown: 3,
 };
 

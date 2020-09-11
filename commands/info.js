@@ -5,7 +5,6 @@ module.exports = {
 	name: 'info',
 	description: 'Tells you more about the bot.',
 	aliases: ['about'],
-	usage: '[command name]',
 	cooldown: 3,
 };
 

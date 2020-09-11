@@ -5,7 +5,6 @@ module.exports = {
 	name: 'maps',
 	description: 'Among Us Maps.',
 	aliases: ['map'],
-	usage: '[command name]',
 	cooldown: 3,
 };
 

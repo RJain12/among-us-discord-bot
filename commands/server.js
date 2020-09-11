@@ -4,7 +4,6 @@ const Discord = require('discord.js');
 module.exports = {
 	name: 'server',
 	description: 'Join the Official Server for the Among Us Discord Bot!',
-	usage: '[command name]',
 	cooldown: 3
 };
 

@@ -8,5 +8,5 @@ module.exports = {
         incorrectUsage: "For more help and a detailed description of each command, `ad help`"
     },
     footerImg: "https://lh3.googleusercontent.com/VHB9bVB8cTcnqwnu0nJqKYbiutRclnbGxTpwnayKB4vMxZj8pk1220Rg-6oQ68DwAkqO",
-    important: "[Invite Me](https://discord.com/api/oauth2/authorize?client_id=754039067485929654&permissions=52224&scope=bot) - [Support Server](https://discord.gg/cGf3D2T)"
+  important: "[Invite Me](https://discord.com/api/oauth2/authorize?client_id=754039067485929654&permissions=52224&scope=bot) - [Support Server](https://discord.gg/cGf3D2T)"
 };

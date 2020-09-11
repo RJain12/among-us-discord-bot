@@ -4,6 +4,7 @@ const Discord = require('discord.js');
 module.exports = {
 	name: 'wiki',
 	description: 'Search the Among Us Fandom Wiki',
+  usage: '[search term]',
 	cooldown: 3,
 };
 
