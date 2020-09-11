@@ -10,10 +10,8 @@ module.exports = {
 
 module.exports.run = async (client, message, args) => {
 	try {
-    if (args.length < 1) {message.reply('Please specify a search term for the Among Us Wiki, e.g. `am!wiki mira hq`.'); return;}
-    let ourstr = String(args);
-    ourstr = ourstr.split(" ");
-    message.channel.send(`https://among-us-wiki.fandom.com/wiki/${ourstr.join("_")}`);
+    if (args.length < 1) {message.reply('Please specify a search term for the Among Us Wiki, e.g. `am!wiki Ejection`.'); return;}
+    message.channel.send(`https://among-us-wiki.fandom.com/wiki/${args}`);
 	}
 	catch (err) {
 		message.reply('Please give me the `EMBED LINKS` permission.');
