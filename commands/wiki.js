@@ -11,7 +11,7 @@ module.exports = {
 module.exports.run = async (client, message, args) => {
 	try {
     if (args.length < 1) {message.reply('Please specify a search term for the Among Us Wiki, e.g. `am!wiki Ejection`.'); return;}
-    message.channel.send(`https://among-us-wiki.fandom.com/wiki/${args}`);
+    message.channel.send(`https://among-us-wiki.fandom.com/wiki/${String(message.content).slice(8).replace(" ", "_")}`);
 	}
 	catch (err) {
 		message.reply('Please give me the `EMBED LINKS` permission.');
