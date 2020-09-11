@@ -14,11 +14,11 @@ module.exports.run = async (client, message, args) => {
 	if (!args.length) {
 		const helpEmbed = new Discord.MessageEmbed()
 			.setColor(embedColor)
-			.setAuthor('AdBot Help Page', footerImg)
+			.setAuthor('Among Us Help Page', footerImg)
 			.setDescription(`Send \`${prefix}help [command name]\` to get info on a specific command.`)
 			.addFields(
 				{ name: '<:YTtools:715769246050680863> Utility', value: '`help` `info` `ping` `invite`', inline: true },
-				{ name: '<:crewmate_red:753870543479898192> Among Us', value: '`server` `guide` `wiki`', inline: true },
+				{ name: '<:crewmate_red:753870543479898192> Among Us', value: '`server` `guide` `wiki` `maps`', inline: true },
 				{ name: 'Important Links', value: important }
 			)
 			.setTimestamp()
@@ -34,14 +34,14 @@ module.exports.run = async (client, message, args) => {
 	}
 	const name = args[0].toLowerCase();
 	const command = client.commands.get(name) || client.commands.find(c => c.aliases && c.aliases.includes(name));
-	if (!command) { return message.reply('that\'s not a valid command! Do `ad help` for all my commands.'); }
+	if (!command) { return message.reply('that\'s not a valid command! Do `am!help` for all my commands.'); }
 
 	const alias = (command.aliases ? command.aliases.join(', ') : 'none');
 	const usage = (command.usage ? `\`${prefix}${command.name} ${command.usage}\`` : `\`${prefix}${command.name}\``);
 
 	const helpEmbed = new Discord.MessageEmbed()
 		.setColor(embedColor)
-		.setDescription(`**Command Name:** \`ad ${command.name}\``)
+		.setDescription(`**Command Name:** \`am!${command.name}\``)
 		.addFields(
 			{ name: 'Description', value: command.description },
 			{ name: 'Aliases', value: alias, inline: true },

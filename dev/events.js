@@ -1,18 +1,10 @@
 const { footerTxt, footerImg, embedColor } = require('../config.js');
 const Discord = require("discord.js");
 const shardReady = async (client, id) => {
-	try {
-		console.info(`Connected to Discord. Shard ${id} ready.`);
-		  const rjain = client.members.cache.get('286737962769580032');
-		  rjain.send('Bot restarted');
-	} catch (error) {
-		console.error(error)
-	}
-
 	client.user.setPresence({
 		status: 'online',
 		activity: {
-			name: `ad money! | ad help`,
+			name: `AMONG US | am!help`,
 			type: 'WATCHING'
 		}
 	});
