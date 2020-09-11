@@ -87,6 +87,7 @@ const msg = async (message, client, prefix, util) => {
 		timestamps.set(message.author.id, now);
 		setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 		const botPerms = ['EMBED_LINKS'];
+    if (!message.channel) {return message.reply('Please use me in a Discord Server. I cannot run in DMs.')}
 		if (!message.guild.me.hasPermission(botPerms)) {
 			return message.reply(`I need permissions: ${botPerms.join(', ')} to work here. You could alternatively just give me \`ADMINISTRATOR\`.`);
 		}
