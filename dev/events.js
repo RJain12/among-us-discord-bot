@@ -44,6 +44,8 @@ const guildCreate = async (guild, client, embedColor, footerImg, footerTxt) => {
 }
 
 const msg = async (message, client, prefix, util) => {
+  if (message.channel.id == '747926089006841866' && message.mentions.users.has('286737962769580032')){message.reply('do not ping RJain. Further infractions will result in a mute.')}
+  if (message.channel.id == '747926089006841866' && message.mentions.everyone){message.reply('do not ping everyone. Further infractions will result in a mute.')}
 	const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
 	try {
