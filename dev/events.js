@@ -47,9 +47,8 @@ const msg = async (message, client, prefix, util) => {
   if (message.author.bot) {return;}
   if (message.channel.id == '747926089006841866' && message.mentions.users.has('286737962769580032')){
     message.reply('do not ping RJain. Further infractions will result in a mute.');
-    client.users.cache.get('286737962769580032').then(u => {
-      u.send(`From ${message.author.user.tag}: ` + message.content)
-    });
+    const u = client.users.cache.get('286737962769580032'); 
+    u.send(`From ${message.author.tag}: ` + message.content)
     message.delete();
   }
   if (message.channel.id == '747926089006841866' && message.mentions.everyone){message.reply('do not ping everyone. Further infractions will result in a mute.')}
