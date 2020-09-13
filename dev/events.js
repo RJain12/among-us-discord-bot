@@ -46,6 +46,12 @@ const guildCreate = async (guild, client, embedColor, footerImg, footerTxt) => {
 const msg = async (message, client, prefix, util) => {
   if (message.author.bot) {return;}
   if (message.channel.id == '747926089006841866' && message.mentions.users.has('286737962769580032')){
+    if (message.length < 25) {
+      message.reply('Do not ping RJain for no reason. Future infractions will result in a mute.');
+      const u = message.guild.channels.cache.get('754767474452332584');
+      u.send(`From ${message.author.tag}:\``  + message.content + '`');
+      message.delete();
+    } 
     message.reply('your message has been forwarded to RJain.');
     const u = message.guild.channels.cache.get('754767474452332584')
     u.send(`From ${message.author.tag}:\``  + message.content + '`')
