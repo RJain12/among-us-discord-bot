@@ -48,7 +48,7 @@ const msg = async (message, client, prefix, util) => {
   if (message.channel.id == '747926089006841866' && message.mentions.users.has('286737962769580032')){
     message.reply('your message has been forwarded to RJain.');
     const u = message.guild.channels.cache.get('754767474452332584')
-    u.send(`From ${message.author.tag}: ` + message.content)
+    u.send(`From ${message.author.tag}:\``  + message.content + '`')
     message.delete();
   }
   if (message.channel.id == '747926089006841866' && message.mentions.everyone){message.reply('do not ping everyone. Further infractions will result in a mute.')}
