@@ -30,7 +30,7 @@ module.exports.run = async (client, message, args) => {
               permissionOverwrites: [
                 {
                   id: message.author.id,
-                  allow: ['MANAGE_CHANNELS', 'VIEW_CHANNEL', 'CONNECT']
+                  allow: ['MANAGE_CHANNELS', 'VIEW_CHANNEL', 'CONNECT', 'MOVE_MEMBERS']
                 }
               ],
             })
