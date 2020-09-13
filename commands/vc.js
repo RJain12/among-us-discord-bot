@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
     permissionOverwrites: [
       {
         id: message.author.id,
-        allow: ['MANAGE_CHANNELS', 'VIEW_CHANNEL']
+        allow: ['MANAGE_CHANNELS', 'VIEW_CHANNEL', 'CONNECT']
       },
       {
         id: message.guild.roles.everyone,
