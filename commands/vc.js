@@ -38,7 +38,7 @@ module.exports.run = async (client, message, args) => {
                 }
               ],
             })
-              message.reply(`I just created a Private VC for you, called **${collected2.first().content.toUpperCase} // ${collected.first().content.toUpperCase}**.\nYou have permissions to edit the channel.\nTell friends to join the **Private Waiting Room**, and you can move them into your VC.\nPlease do not create more than 1 voice channel at a time.\n\nHave fun!`)
+              message.reply(`I just created a Private VC for you, called **${collected2.first().content.toUpperCase()} // ${collected.first().content.toUpperCase()}**.\nYou have permissions to edit the channel.\nTell friends to join the **Private Waiting Room**, and you can move them into your VC.\nPlease do not create more than 1 voice channel at a time.\n\nHave fun!`)
           })
           .catch(collected => {
             message.reply('You did not respond in time. Cancelled!');
