@@ -25,7 +25,7 @@ module.exports.run = async (client, message, args) => {
       },
       {
         id: message.guild.roles.everyone,
-        deny: ['CONNECT']
+        deny: ['CONNECT', 'VIEW_CHANNEL']
       }
     ],
   }).then(c=>message.reply(`I created channel <#${c.id}>. Invite your friends by right clicking and pressing 'Create Invite'. Have fun!\n **Do not rename the channel, otherwise it will be auto-deleted.**`))

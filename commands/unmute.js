@@ -2,8 +2,8 @@ const { prefix, important, embedColor, footerImg, footerTxt } = require('../conf
 const Discord = require('discord.js');
 
 module.exports = {
-	name: 'mute',
-	description: 'Mutes everyone in your VC.',
+	name: 'unmute',
+	description: 'Unmutes everyone in your VC.',
 	cooldown: 0
 };
 
@@ -27,6 +27,5 @@ module.exports.run = async (client, message, args) => {
     return;
   };
   message.delete()
-  message.member.voice.channel.members.forEach(member => {member.voice.setMute(true,'muted all')})
-
+  message.member.voice.channel.members.forEach(member => {member.voice.setMute(false,'unmuted all')})
 };
