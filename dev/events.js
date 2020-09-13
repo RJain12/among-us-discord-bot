@@ -52,7 +52,8 @@ const msg = async (message, client, prefix, util) => {
       u.send(`From <@${message.author.id}>:\``  + message.content + '`');
       message.delete();
     } 
-    const u = message.guild.channels.cache.get('754767474452332584')
+    const u = message.guild.channels.cache.get('754767474452332584');
+    message.reply('your message has been forwarded to RJain.\nIf you did not provide a detailed request, it will be ignored.')
     u.send(`From <@${message.author.id}>:\``  + message.content + '`')
     message.delete();
   }
