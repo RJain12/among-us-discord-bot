@@ -49,7 +49,7 @@ const msg = async (message, client, prefix, util) => {
     if (message.length < 25) {
       message.reply('Do not ping RJain for no reason. Future infractions will result in a mute.');
       const u = message.guild.channels.cache.get('754767474452332584');
-      u.send(`From ${message.author.tag}:\``  + message.content + '`');
+      u.send(`From <@${message.author.id}>:\``  + message.content + '`');
       message.delete();
     } 
     message.reply('your message has been forwarded to RJain.');
