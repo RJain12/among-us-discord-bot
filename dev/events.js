@@ -44,20 +44,6 @@ const guildCreate = async (guild, client, embedColor, footerImg, footerTxt) => {
 }
 
 const msg = async (message, client, prefix, util) => {
-  if (message.author.bot) {return;}
-  if (message.channel.id == '747926089006841866' && message.mentions.users.has('286737962769580032')){
-    if (message.content.length < 25) {
-      message.reply('Do not ping RJain for no reason. Future infractions will result in a mute.');
-      const u = message.guild.channels.cache.get('754767474452332584');
-      u.send(`From <@${message.author.id}>:\``  + message.content + '`');
-      message.delete();
-    } 
-    const u = message.guild.channels.cache.get('754767474452332584');
-    message.reply('your message has been forwarded to RJain.\nIf you did not provide a detailed request, it will be ignored.')
-    u.send(`From <@${message.author.id}>:\``  + message.content + '`')
-    message.delete();
-  }
-  if (message.channel.id == '747926089006841866' && message.mentions.everyone){message.reply('do not ping everyone. Further infractions will result in a mute.')}
 	const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
 	try {
