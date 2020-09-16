@@ -43,6 +43,10 @@ const guildCreate = async (guild, client, embedColor, footerImg, footerTxt) => {
 	client.shard.broadcastEval(`this.channels.cache.get('730172463467593770').send('I was just added to **${guild.name}** which has \`${guild.memberCount}\` members.')`);
 }
 
+const voiceUp = async (oldMember, newMember) => {
+    newMember.voice.setMute(false, 'unmuted')
+};
+
 const msg = async (message, client, prefix, util) => {
 	const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 	const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
@@ -98,4 +102,4 @@ const msg = async (message, client, prefix, util) => {
 	}
 
 }
-module.exports = { shardReady, msg, guildCreate, exit };
+module.exports = { shardReady, voiceUp, msg, guildCreate, exit };
