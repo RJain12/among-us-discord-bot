@@ -1,4 +1,4 @@
-  const { footerTxt, footerImg, embedColor } = require('../config.js');
+const { footerTxt, footerImg, embedColor } = require('../config.js');
 const Discord = require("discord.js");
 const shardReady = async (client, id) => {
 	client.user.setPresence({
@@ -18,7 +18,7 @@ const exit = async (code, client) => {
 			.setAuthor(`Disconnecting from process with code ${code}.`, footerImg)
 			.setDescription('<:cancel:730661815670800434> Bot process turning off!')
 			.setAuthor('Among Us Status')
-			.addFields([{name: `All Shards`, value: `Offline`}])
+			.addFields([{ name: `All Shards`, value: `Offline` }])
 			.setTimestamp()
 			.setFooter(footerTxt, footerImg)
 		let channel = client.channels.cache.get('729788794299220060')
@@ -43,8 +43,16 @@ const guildCreate = async (guild, client, embedColor, footerImg, footerTxt) => {
 	client.shard.broadcastEval(`this.channels.cache.get('730172463467593770').send('I was just added to **${guild.name}** which has \`${guild.memberCount}\` members.')`);
 }
 
-const voiceUp = async (oldMember, newMember) => {
-    newMember.voice.setMute(false, 'unmuted')
+const voiceUp = async (oldState, newState) => {
+	if (newState.channel) {
+		newState.setMute(false, 'unmuted');
+	}
+	if (oldState.channel) {
+		if (oldState.channel.name.toLowerCase().includes(`privatevc ${message.author.id}`)) {
+			oldState.channel.delete();
+			oldState.member.send(`Closed private vc!`)
+		}
+	}
 };
 
 const msg = async (message, client, prefix, util) => {
@@ -65,9 +73,9 @@ const msg = async (message, client, prefix, util) => {
 		if (command.dev && !util.isDev(message)) {
 			return message.reply('you are not a developer.')
 		}
-    if (command.admin && !util.isAdmin(message)) {
-      return message.reply('you must have `ADMINISTRATOR` to run this command.')
-    }
+		if (command.admin && !util.isAdmin(message)) {
+			return message.reply('you must have `ADMINISTRATOR` to run this command.')
+		}
 		if (command.args && !args.length) {
 			let reply = `You didn't provide any arguments, ${message.author}!`;
 			if (command.usage) {
@@ -91,7 +99,7 @@ const msg = async (message, client, prefix, util) => {
 		timestamps.set(message.author.id, now);
 		setTimeout(() => timestamps.delete(message.author.id), cooldownAmount);
 		const botPerms = ['EMBED_LINKS'];
-    if (!message.channel) {return message.reply('Please use me in a Discord Server. I cannot run in DMs.')}
+		if (!message.channel) { return message.reply('Please use me in a Discord Server. I cannot run in DMs.') }
 		if (!message.guild.me.hasPermission(botPerms)) {
 			return message.reply(`I need permissions: ${botPerms.join(', ')} to work here. You could alternatively just give me \`ADMINISTRATOR\`.`);
 		}

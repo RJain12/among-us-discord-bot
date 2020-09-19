@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
           .then(collected2 => {
             if (collected.first().content.toLowerCase() == 'cancel') { message.reply('Cancelled creation!'); return; }
-            message.guild.channels.create(`${collected2.first().content.toUpperCase()} // ${collected.first().content.toUpperCase()}`, {
+            message.guild.channels.create(`${collected2.first().content.toUpperCase()} // ${collected.first().content.toUpperCase()} PrivateVC ${message.author.id}`, {
               type: 'voice',
               topic: `${message.author.tag}'s private voice channel.`,
               bitrate: `64000`,
@@ -34,7 +34,7 @@ module.exports.run = async (client, message, args) => {
                 }
               ],
             })
-              message.reply(`I just created a Private VC for you, called **${collected2.first().content.toUpperCase()} // ${collected.first().content.toUpperCase()}**.\nYou have permissions to edit the channel.\nTell friends to join the **Private Waiting Room**, and you can move them into your VC.\nPlease do not create more than 1 voice channel at a time.\n\nHave fun!`)
+            message.reply(`I just created a Private VC for you, called **${collected2.first().content.toUpperCase()} // ${collected.first().content.toUpperCase()}**.\nYou have permissions to edit the channel.\nTell friends to join the **Private Waiting Room**, and you can move them into your VC.\nPlease do not create more than 1 voice channel at a time.\n\nHave fun!`)
           })
           .catch(collected => {
             message.reply('You did not respond in time. Cancelled!');
