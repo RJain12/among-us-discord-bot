@@ -1,5 +1,5 @@
 module.exports = {
-    token: 'NzU0MDM5MDY3NDg1OTI5NjU0.X1u7mw.vmssF-CrTR7bI1813sPhr25kACQ',
+    token: 'NzU4MDU0NDQ4MDQ3MDYzMTkx.X2pXOA.LBSkyqmc4U20v-1l1iwoWTBwqfc',
     prefix: "am!",
     id: "754039067485929654",
     footerTxt: "☕ Cafe Development © 2020",
