@@ -48,7 +48,7 @@ const voiceUp = async (oldState, newState) => {
 		newState.setMute(false, 'unmuted');
 	}
 	if (oldState.channel) {
-		if (oldState.channel.name.toLowerCase().includes(`privatevc ${message.author.id}`)) {
+		if (oldState.channel.name.toLowerCase().includes(`privatevc ${oldState.member.id}`)) {
 			oldState.channel.delete();
 			oldState.member.send(`Closed private vc!`)
 		}
