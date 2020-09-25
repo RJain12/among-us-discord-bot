@@ -16,7 +16,6 @@ const { shardReady, msg, guildCreate, voiceUp } = require('./dev/events.js');
 client.on('shardReady', async (id) => { shardReady(client, id) });
 client.on('message', async (message) => { msg(message, client, prefix, util) });
 client.on('guildCreate', (guild) => { guildCreate(guild, client, embedColor, footerImg, footerTxt) });
-client.on("voiceStateUpdate", (oldState, newState) => { voiceUp(oldState, newState) })
 client.on("error", (e) => console.error(`${e}`));
 client.on("warn", (w) => console.warn(`${w}`));
 client.on("debug", (e) => console.info(e));

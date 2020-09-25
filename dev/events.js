@@ -43,18 +43,6 @@ const guildCreate = async (guild, client, embedColor, footerImg, footerTxt) => {
   client.shard.broadcastEval(`this.channels.cache.get('730172463467593770').send('I was just added to **${guild.name}** which has \`${guild.memberCount}\` members.')`);
 }
 
-const voiceUp = async (oldState, newState) => {
-  if (newState.channel) {
-    newState.setMute(false, 'unmuted');
-  }
-  if (oldState.channel) {
-    if (oldState.channel.name.toLowerCase().includes(`privatevc ${oldState.member.id}`)) {
-      oldState.channel.delete();
-      oldState.member.send(`Closed private vc!`)
-    }
-  }
-};
-
 const msg = async (message, client, prefix, util) => {
   if (message.author.bot) return;
   if ((message.content.toLowerCase().includes('discord.gg/') || message.content.toLowerCase().includes('discordapp.com/invite/')) && message.channel.id == '753869012827504680') {
@@ -128,4 +116,4 @@ const msg = async (message, client, prefix, util) => {
   }
 
 }
-module.exports = { shardReady, voiceUp, msg, guildCreate, exit };
+module.exports = { shardReady, msg, guildCreate, exit };
