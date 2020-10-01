@@ -6,7 +6,7 @@ module.exports = {
 
 module.exports.run = async (client, message, args) => {
   if (message.guild.id !== '753867179048304750' || message.channel.id == '754486510518140998') { return; };
-  if (!message.member.roles.cache.has('757711481860259961') && !message.member.roles.cache.has('754424770681897002') && !message.member.roles.cache.has('754063974034702407')) {
+  if (!message.member.roles.cache.has('757711481860259961') && !message.member.roles.cache.has('754424770681897002')) {
     message.reply('you do not have access to create Private VCs. <:report:753870901749088256> This is exclusive for our Server Patrons.\nVisit <#754030174277861467> for more information.');
     return;
   };
