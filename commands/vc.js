@@ -21,7 +21,7 @@ module.exports.run = async (client, message, args) => {
         message.channel.awaitMessages(filter, { max: 1, time: 30000, errors: ['time'] })
           .then(collected2 => {
             if (collected.first().content.toLowerCase() == 'cancel') { message.reply('Cancelled creation!'); return; }
-            message.guild.channels.create(`${collected2.first().content.toUpperCase()} // ${collected.first().content.toUpperCase()} PrivateVC ${message.author.id}`, {
+            message.guild.channels.create(`${collected2.first().content.toUpperCase()} // ${collected.first().content.toUpperCase()}`, {
               type: 'voice',
               topic: `${message.author.tag}'s private voice channel.`,
               bitrate: `64000`,
