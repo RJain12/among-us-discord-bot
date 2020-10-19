@@ -44,27 +44,27 @@ const guildCreate = async (guild, client, embedColor, footerImg, footerTxt) => {
 }
 
 const msg = async (message, client, prefix, util) => {
-  if ((message.content.toLowerCase().includes('discord.gg/') || message.content.toLowerCase().includes('discordapp.com/invite/')) && message.channel.id == '753869012827504680') {
-    const invitesLinks = message.content.split('.gg');
-    invitesLinks.forEach(inv => {
-      const code = inv.substr(0, 7);
-      if (code.startsWith('/')) {
-        const inviteCodeFromIt = code.slice(1);
-        message.guild.fetchInvites().then(
-          invites => {
-            const isInviteValid = invites.find(inVC => inVC == inviteCodeFromIt);
-            if (!isInviteValid) {
-                message.delete().then(message.reply(`**Other invite links are not allowed**. Please only post invites to THIS server's VC. If you DID post that, make sure the BEGINNING of your message is the invite link, and then any message after it. Thanks!`))
-            }
-          }
-        )
-      }
-    })
-  }
   if (message.author.bot) return;
   const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
   try {
+    if ((message.content.toLowerCase().includes('discord.gg/') || message.content.toLowerCase().includes('discordapp.com/invite/')) && message.channel.id == '753869012827504680') {
+      const invitesLinks = message.content.split('.gg');
+      invitesLinks.forEach(inv => {
+        const code = inv.substr(0, 7);
+        if (code.startsWith('/')) {
+          const inviteCodeFromIt = code.slice(1);
+          message.guild.fetchInvites().then(
+            invites => {
+              const isInviteValid = invites.find(inVC => inVC == inviteCodeFromIt);
+              if (!isInviteValid) {
+                  message.delete().then(message.reply(`**Other invite links are not allowed**. Please only post invites to THIS server's VC. If you DID post that, make sure the BEGINNING of your message is the invite link, and then any message after it. Thanks!`))
+              }
+            }
+          )
+        }
+      })
+    }
     if (!prefixRegex.test(message.content.toLowerCase())) return;
     const content = message.content.toLowerCase()
     const [, matchedPrefix] = content.match(prefixRegex);
