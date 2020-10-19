@@ -48,7 +48,7 @@ const msg = async (message, client, prefix, util) => {
   const escapeRegex = str => str.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
   const prefixRegex = new RegExp(`^(<@!?${client.user.id}>|${escapeRegex(prefix)})\\s*`);
   try {
-    if ((message.content.toLowerCase().includes('discord.gg/') || message.content.toLowerCase().includes('discordapp.com/invite/')) && message.channel.id == '753869012827504680') {
+    if (message.channel.id == '753869012827504680') {
       const invitesLinks = message.content.split('.gg');
       invitesLinks.forEach(inv => {
         const code = inv.substr(0, 7);
