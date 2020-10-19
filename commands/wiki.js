@@ -9,7 +9,7 @@ module.exports = {
 };
 
 module.exports.run = async (client, message, args) => {
-	try {
+try {
     if (message.mentions.everyone) {message.reply('Do not ping everyone.'); return;}
     if (message.mentions.roles) {message.reply('Do not ping roles.'); return;}
     if (args.length < 1) {message.reply('Please specify a search term for the Among Us Wiki, e.g. `am!wiki Impostor`.'); return;}
