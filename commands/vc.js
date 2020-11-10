@@ -26,7 +26,7 @@ module.exports.run = async (client, message, args) => {
               topic: `${message.author.tag}'s private voice channel.`,
               bitrate: `64000`,
               userLimit: `10`,
-              parent: message.guild.channels.cache.get('754446220168134787'),
+              parent: message.guild.channels.cache.get('775707911753564161'),
               permissionOverwrites: [
                 {
                   id: message.author.id,
