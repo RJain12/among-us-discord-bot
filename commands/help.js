@@ -18,7 +18,7 @@ module.exports.run = async (client, message, args) => {
 			.setDescription(`Send \`${prefix}help [command name]\` to get info on a specific command.`)
 			.addFields(
 				{ name: '<:YTtools:715769246050680863> Utility', value: '`help` `info` `ping` `invite`', inline: true },
-				{ name: '<:crewmate_red:753870543479898192> Among Us', value: '`server` `guide` `wiki` `maps`', inline: true },
+				{ name: '<:ACred:775760025594494996> Among Us', value: '`server` `guide` `wiki` `maps`', inline: true },
 				{ name: 'Important Links', value: important }
 			)
 			.setTimestamp()

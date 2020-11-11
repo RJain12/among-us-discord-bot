@@ -16,5 +16,5 @@ module.exports.run = async (client, message, args) => {
     .setTimestamp()
     .setFooter(footerTxt, footerImg);
   message.reply(embed)
-  message.channel.send('https://discord.gg/cGf3D2T')
+  message.channel.send('https://dsc.gg/crewmate')
 };
