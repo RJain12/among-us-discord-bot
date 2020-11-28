@@ -13,9 +13,9 @@ module.exports.run = async (client, message, args) => {
     .setColor(embedColor)
 		.setAuthor('Tips & Tricks. Strategy.', footerImg)
     .addFields(
-      { name: '<:report:753870901749088256> Full Guide', value: '[Click Here](https://steamcommunity.com/sharedfiles/filedetails/?id=2220357997)', inline:true},
-		  { name: '<:crewmate_red:753870543479898192> Crewmate', value: '[Click Here](https://www.bluestacks.com/blog/game-guides/among-us/amongus-crewmate-guide-en.html)', inline:true },
-      { name: '<:vent:753871189906292772> Impostor', value: '[Click Here](https://steamcommunity.com/sharedfiles/filedetails/?id=2220357997)', inline:true},
+      { name: '<:report:780281460837449771> Full Guide', value: '[Click Here](https://steamcommunity.com/sharedfiles/filedetails/?id=2220357997)', inline:true},
+		  { name: '<:blue_crewmate_gun:780619189340602388> Crewmate', value: '[Click Here](https://www.bluestacks.com/blog/game-guides/among-us/amongus-crewmate-guide-en.html)', inline:true },
+      { name: '<:vent:780281601992818719> Impostor', value: '[Click Here](https://steamcommunity.com/sharedfiles/filedetails/?id=2220357997)', inline:true},
 		  { name: 'Important Links', value: important }
 		)
 		.setTimestamp()
