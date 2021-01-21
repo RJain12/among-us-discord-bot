@@ -14,7 +14,7 @@ module.exports.run = async (client, message, args) => {
 		.setAuthor('All Among Us Maps', footerImg)
     .addFields(
       { name: '<:report:780281460837449771> The Skeld', value: '[Click Here](https://u.cubeupload.com/SuperInky/skeldmapguidev2.png)', inline: true},
-		  { name: '<:blue_crewmate_gun:780619189340602388> Mira HQ', value: '[Click Here](https://i.redd.it/8i1kd1mp9ij51.png)', inline: true},
+		  { name: '<:black_crewmate_knife:780619179593695303> Mira HQ', value: '[Click Here](https://i.redd.it/8i1kd1mp9ij51.png)', inline: true},
       { name: '<:vent:780281601992818719> Polus', value: '[Click Here](https://cdn.discordapp.com/attachments/754031126149988453/754033354852270190/POLUS_MAP_GUIDE.png)', inline:true},
 		  { name: 'Important Links', value: important }
 		)
