@@ -11,10 +11,7 @@ module.exports = {
 module.exports.run = async (client, message, args) => {
   const embed = new Discord.MessageEmbed()
     .setColor(embedColor)
-    .setAuthor('Among Us Discord Server', footerImg)
-    .setDescription(`Join the Among Us Discord Server!`)
-    .setTimestamp()
-    .setFooter(footerTxt, footerImg);
+    .setAuthor('Play Among Us with Others!', footerImg)
+    .setDescription(`[Join the Among Us Cafe Discord Server](https://dsc.gg/crewmate)!`)
   message.reply(embed)
-  message.channel.send('https://dsc.gg/crewmate')
 };
