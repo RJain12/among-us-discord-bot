@@ -1,5 +1,5 @@
 const { embedColor, footerImg, footerTxt } = require('../config.js');
-const Discord = require('discord.js');
+const Discord = require('discord.js-light');
 
 module.exports = {
 	name: 'info',
@@ -24,28 +24,20 @@ module.exports.run = async (client, message, _) => {
 				.setColor(embedColor)
 				.setAuthor(`AdBot | Uptime: ${days} days, ${hours} hours, ${minutes} minutes.`, footerImg)
 				.addFields(
-					{ name: 'Version', value: '1.1.a', inline: true },
-					{ name: 'Library', value: 'discord.js', inline: true },
+					{ name: 'Version', value: '`1.1.a`', inline: true },
+					{ name: 'Library', value: '`discord.js`', inline: true },
 					{ name: 'Developer', value: '[Café Development](https://discord.gg/q3M4NuE)', inline: true },
 					{ name: 'Servers', value: `\`${totalGuilds}\``, inline: true },
 					{ name: 'Members', value: `\`${totalMembers}\``, inline: true },
 					{ name: 'Shards', value: `\`${message.guild.shardID}\` of \`${client.shard.count}\``, inline: true },
 					{ name: 'Memory', value: '`' + eval(Math.round(process.memoryUsage().heapUsed / 1024 / 1024 * 10) / 10) + '` MB', inline: true },
 					{ name: 'Invite', value: '[Invite Me](https://discord.com/api/oauth2/authorize?client_id=754039067485929654&permissions=52224&scope=bot)', inline: true },
-					{ name: 'Discord', value: '[Join Server](https://discord.gg/q3M4NuE)', inline: true },
+					{ name: 'Discord', value: '[Join Server](https://discord.gg/J4xpV78Cbs)', inline: true },
 
 				)
 				.setTimestamp()
 				.setFooter(footerTxt, footerImg);
 			message.channel.send(info);
-			message.channel.send(`My Patrons:
-    - jacob wafflez#6209
-    - WLVF#7958
-    - Iara Daisuke#9999
-Special thanks to:
-    - **Iara Daisuke#9999** for HUGE financial contributions (over $500)!
-**For commands**, use \`am!help\`.
-            `);
 		})
 		.catch(console.error);
 };

@@ -1,5 +1,4 @@
 const { embedColor, footerImg, footerTxt } = require('../config.js');
-const Discord = require('discord.js');
 
 module.exports = {
 	name: 'wiki',

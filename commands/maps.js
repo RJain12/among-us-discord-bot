@@ -1,24 +1,24 @@
-const { embedColor, footerImg, footerTxt,important } = require('../config.js');
-const Discord = require('discord.js');
+const { embedColor, footerImg, footerTxt, important } = require('../config.js');
+const Discord = require('discord.js-light');
 
 module.exports = {
-	name: 'maps',
-	description: 'Among Us Maps.',
-	aliases: ['map'],
-	cooldown: 3,
+    name: 'maps',
+    description: 'Among Us Maps.',
+    aliases: ['map'],
+    cooldown: 3,
 };
 
 module.exports.run = async (client, message, args) => {
-  const embed = new Discord.MessageEmbed()
-    .setColor(embedColor)
-		.setAuthor('All Among Us Maps', footerImg)
-    .addFields(
-      { name: '<:report:780281460837449771> The Skeld', value: '[Click Here](https://u.cubeupload.com/SuperInky/skeldmapguidev2.png)', inline: true},
-		  { name: '<:black_crewmate_knife:780619179593695303> Mira HQ', value: '[Click Here](https://i.redd.it/8i1kd1mp9ij51.png)', inline: true},
-      { name: '<:vent:780281601992818719> Polus', value: '[Click Here](https://cdn.discordapp.com/attachments/754031126149988453/754033354852270190/POLUS_MAP_GUIDE.png)', inline:true},
-		  { name: 'Important Links', value: important }
-		)
-		.setTimestamp()
-		.setFooter(footerTxt, footerImg);
-  message.reply(embed)
+    const embed = new Discord.MessageEmbed()
+        .setColor(embedColor)
+        .setAuthor('All Among Us Maps', footerImg)
+        .addFields(
+            { name: '<:report:780281460837449771> The Skeld', value: '[Click Here](https://u.cubeupload.com/SuperInky/skeldmapguidev2.png)', inline: true },
+            { name: '<:black_crewmate_knife:780619179593695303> Mira HQ', value: '[Click Here](https://i.redd.it/8i1kd1mp9ij51.png)', inline: true },
+            { name: '<:vent:780281601992818719> Polus', value: '[Click Here](https://cdn.discordapp.com/attachments/754031126149988453/754033354852270190/POLUS_MAP_GUIDE.png)', inline: true },
+            { name: 'Important Links', value: important }
+        )
+        .setTimestamp()
+        .setFooter(footerTxt, footerImg);
+    message.reply(embed)
 }

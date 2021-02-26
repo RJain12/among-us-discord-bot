@@ -1,5 +1,5 @@
 const { embedColor, footerTxt, footerImg, important } = require('../config.js');
-const Discord = require('discord.js');
+const Discord = require('discord.js-light');
 
 module.exports = {
 	name: 'ping',

@@ -1,5 +1,5 @@
 const { footerTxt, footerImg, embedColor } = require('../config.js');
-const Discord = require("discord.js");
+const Discord = require("discord.js-light");
 const shardReady = async (client, id) => {
   client.user.setPresence({
     status: 'online',
@@ -8,39 +8,6 @@ const shardReady = async (client, id) => {
       type: 'WATCHING'
     }
   });
-}
-
-const exit = async (code, client) => {
-  try {
-    console.info(`Disconnecting from Discord. All shards turning off.`);
-    const status = new Discord.MessageEmbed()
-      .setColor('#FF0000')
-      .setAuthor(`Disconnecting from process with code ${code}.`, footerImg)
-      .setDescription('<:cancel:730661815670800434> Bot process turning off!')
-      .setAuthor('Among Us Status')
-      .addFields([{ name: `All Shards`, value: `Offline` }])
-      .setTimestamp()
-      .setFooter(footerTxt, footerImg)
-    let channel = client.channels.cache.get('729788794299220060')
-    channel.bulkDelete(5)
-    channel.send(status)
-  } catch (error) {
-    console.error(error)
-  }
-}
-
-const guildCreate = async (guild, client, embedColor, footerImg, footerTxt) => {
-  const joinMessage = new Discord.MessageEmbed()
-    .setColor(embedColor)
-    .setAuthor('Nice to meet you!', footerImg)
-    .setDescription(`Hello, I was added to your server, **${guild.name}**`)
-    .addFields([
-      { name: 'Get Started!', value: 'Type: `am!help`' }
-    ])
-    .setTimestamp()
-    .setFooter(footerTxt, footerImg)
-  guild.owner.send(joinMessage)
-  client.shard.broadcastEval(`this.channels.cache.get('730172463467593770').send('I was just added to **${guild.name}** which has \`${guild.memberCount}\` members.')`);
 }
 
 const msg = async (message, client, prefix, util) => {
@@ -99,4 +66,4 @@ const msg = async (message, client, prefix, util) => {
   }
 
 }
-module.exports = { shardReady, msg, guildCreate, exit };
+module.exports = { shardReady, msg };

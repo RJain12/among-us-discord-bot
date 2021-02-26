@@ -1,5 +1,4 @@
 module.exports = {
-    token: 'NzU4MDU0NDQ4MDQ3MDYzMTkx.X2pXOA.IrZTob6Aw4GqGZySpaNp8aV5HX8',
     prefix: "am!",
     id: "758054448047063191",
     footerTxt: "☕ Cafe Development © 2020",
@@ -8,5 +7,5 @@ module.exports = {
         incorrectUsage: "For more help and a detailed description of each command, `ad help`"
     },
     footerImg: "https://lh3.googleusercontent.com/VHB9bVB8cTcnqwnu0nJqKYbiutRclnbGxTpwnayKB4vMxZj8pk1220Rg-6oQ68DwAkqO",
-  important: "[Invite Me](https://discord.com/api/oauth2/authorize?client_id=758054448047063191&permissions=8&scope=bot) - [Support Server](https://discord.gg/cGf3D2T)"
+  important: "[Invite Me](https://discord.com/api/oauth2/authorize?client_id=758054448047063191&permissions=8&scope=bot) - [Support Server](https://discord.com/invite/NnzW42c)"
 };

@@ -1,5 +1,5 @@
 const { prefix, important, embedColor, footerImg, footerTxt } = require('../config.js');
-const Discord = require('discord.js');
+const Discord = require('discord.js-light');
 
 module.exports = {
 	name: 'server',
